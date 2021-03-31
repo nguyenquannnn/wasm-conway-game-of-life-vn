@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hello wasm-pack!</title>
+  <style id="main-style">
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+    html {
+      font-family: 'Quicksand', Arial, sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    body {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* .slider-wrapper {
+      display: inline-block;
+      width: 20px;
+      height: 150px;
+      padding: 0;
+    } */
+
+    .menu {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5em;
+    }
+
+    button {
+      width: 8em;
+    }
+
+    canvas {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      -ms-user-select: none;
+    }
+  </style>
+
+</head>
+
+<body>
+  <noscript>This page contains webassembly and javascript content, please enable
+    javascript in your browser.</noscript>
+    <div>
+    <h1>Trò chơi cuộc sống của Conway 🧬</h1>
+    <h3>Luật chơi:</h3>
+    <ol>
+      <li>Tế bào nào đang sống với ít hơn 2 láng giềng thì sẽ chết</li>
+      <li>Tế bào nào đang sống với 2 hoặc 3 láng giềng thì sẽ tiếp tục sống</li>
+      <li>Tế bào nào đang sống với nhiều hơn 3 láng giếng thì sẽ chết (vì bị quá đống :/)</li>
+      <li>Tế bào nào đang chết mà bị vây quanh bởi 3 láng giềng hoặc hơn thì sẽ được sinh lại</li>
+    </ol>
+
+
+    <div class="menu">
+      <label for="speed">Tốc độ (<span id="fps">60</span> fps): </label>
+      <input type="range" name="speed" id="speedSlider" alt="Speed Slider" min="1" max="200" value="60" step="5" />
+      <button id="start">Chơi</button>
+      <button id="darkMode">Bật đèn!</button>
+      <button id="randomize">Ngẫu hứng</button>
+      <button id="clear">Xóa</button>
+    </div>
+  </div>
+
+  <canvas id="game-of-life-canvas"></canvas>
+  <script src="./bootstrap.js"></script>
+</body>
+
+</html>
