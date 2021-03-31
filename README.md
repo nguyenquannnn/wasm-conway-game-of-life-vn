@@ -2,6 +2,7 @@
 
   <h1><code>Trò chơi cuộc sống của Conway</code></h1>
   
+  ![Demo Animation](../master/demo.gif?raw=true)
  
   
   <sub>Built with 🦀🕸 by <a href="https://rustwasm.github.io/">The Rust and WebAssembly Working Group</a></sub>
